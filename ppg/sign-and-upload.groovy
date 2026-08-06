@@ -49,7 +49,7 @@ pipeline {
     stages {
         stage('Download artifact') {
             steps {
-                withCredentials([string(credentialsId: 'GITHUB_API_TOKEN', variable: 'TOKEN')]) {
+                withCredentials([string(credentialsId: 'github_token', variable: 'TOKEN')]) {
                     sh '''
                     echo "Install jq"
                     if ! command -v jq > /dev/null; then
